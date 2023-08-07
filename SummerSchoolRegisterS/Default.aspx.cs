@@ -18,13 +18,13 @@ namespace SummerSchoolRegisterS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            EntityStudent student = new EntityStudent();
-            student.Name = "Derya";
-            student.Surname = "Yıldız";
-            student.Number = "12343";
-            student.Image = "testfoto";
-            student.Password = "1234";
-            BLLStudent.AddStudentBLL(student);
-        }
+        //    EntityStudent student = new EntityStudent();
+        //    student.Name = "Derya";
+        //    student.Surname = "Yıldız";
+        //    student.Number = "12343";
+        //    student.Image = "testfoto";
+        //    student.Password = "1234";
+        //    BLLStudent.AddStudentBLL(student);
+        //}
     }
 }
