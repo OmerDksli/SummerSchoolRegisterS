@@ -25,5 +25,28 @@ namespace DataAccessLayers
             command.Parameters.AddWithValue("@p5", student.Password);
             return command.ExecuteNonQuery();//etkilenen kayıt sayısı geri döndürülür
         }
+        public static List<EntityStudent> StudentList()
+        {
+            List<EntityStudent> entityStudentsList = new List<EntityStudent>();
+            SqlCommand commandList = new SqlCommand("Select * from Student_Table", Connection.con);
+            if (commandList.Connection.State != ConnectionState.Open)
+            {
+                commandList.Connection.Open();
+            }
+            SqlDataReader sqlDataStudent = commandList.ExecuteReader();
+            while (sqlDataStudent.Read())
+            {
+                EntityStudent student = new EntityStudent();
+                student.Id = Convert.ToInt32(sqlDataStudent["STDID"].ToString());
+                student.Name = sqlDataStudent["STDNAME"].ToString();
+                student.Surname = sqlDataStudent["STDSURNAME"].ToString();
+                student.Number = sqlDataStudent["STDNUMBER"].ToString();
+                student.Password = sqlDataStudent["STDPASSWORD"].ToString();
+                student.Image = sqlDataStudent["STDIMAGE"].ToString();
+                student.Balance = Convert.ToDouble(sqlDataStudent["STDBALANCE"].ToString());
+                entityStudentsList.Add(student);
+            }
+            return entityStudentsList;
+        }
     }
 }

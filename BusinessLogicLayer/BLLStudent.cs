@@ -19,5 +19,9 @@ namespace BusinessLogicLayer
             }
             return -1;
         }
+        public static List<EntityStudent> BllStudentList()
+        {
+            return DALStudent.StudentList();
+        }
     }
 }
