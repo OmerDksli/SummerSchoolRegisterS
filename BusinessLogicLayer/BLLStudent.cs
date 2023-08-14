@@ -23,5 +23,17 @@ namespace BusinessLogicLayer
         {
             return DALStudent.StudentList();
         }
+        public static bool studentDeleteBLL(int delId)
+        {
+            return DALStudent.studentDelete(delId);
+        }
+        public static bool studentUpdateBLL(EntityStudent delId)
+        {
+            return DALStudent.studentUpdate(delId);
+        }
+        public static EntityStudent BllStudentDetail(int id)
+        {
+            return DALStudent.StudentDetail(id);
+        }
     }
 }

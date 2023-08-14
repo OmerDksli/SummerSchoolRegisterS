@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="StudentDelete.aspx" />
     <Content Include="StudentList.aspx" />
+    <Content Include="StudentUpdate.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +80,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDelete.aspx.cs">
+      <DependentUpon>StudentDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentDelete.aspx.designer.cs">
+      <DependentUpon>StudentDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -93,6 +102,13 @@
     </Compile>
     <Compile Include="StudentList.aspx.designer.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentUpdate.aspx.cs">
+      <DependentUpon>StudentUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentUpdate.aspx.designer.cs">
+      <DependentUpon>StudentUpdate.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
