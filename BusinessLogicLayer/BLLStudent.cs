@@ -25,11 +25,20 @@ namespace BusinessLogicLayer
         }
         public static bool studentDeleteBLL(int delId)
         {
-            return DALStudent.studentDelete(delId);
+            if (delId>0)
+            {
+                return DALStudent.studentDelete(delId);
+            }
+            return false;
         }
         public static bool studentUpdateBLL(EntityStudent delId)
         {
-            return DALStudent.studentUpdate(delId);
+            if (delId.Name!=null&& delId.Surname != null && delId.Number != null && delId.Password != null && delId.Image != null && delId.Id > 0)
+            {
+                return DALStudent.studentUpdate(delId);
+            }
+            return false;
+            
         }
         public static EntityStudent BllStudentDetail(int id)
         {

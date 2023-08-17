@@ -34,7 +34,7 @@
             </div>
 
         </div>
-        <asp:Button ID="Button1" CssClass="btn btn-info" runat="server" Text="Güncelle" OnClick="Button1_Click"  />
+        <asp:Button ID="Button1" CssClass="btn btn-warning" runat="server" Text="Güncelle" OnClick="Button1_Click"  />
 
     </form>
 </asp:Content>
