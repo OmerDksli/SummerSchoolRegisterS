@@ -20,6 +20,12 @@ namespace SummerSchoolRegisterS
             DropDownList1.DataTextField = "LessonName";
             DropDownList1.DataValueField = "Id";
             DropDownList1.DataBind();
+            List<EntityStudent> AllStudents = BLLStudent.BllStudentList();
+                DropDownListStd.DataSource = AllStudents;
+                DropDownListStd.DataTextField = "Name";
+                DropDownListStd.DataValueField = "Id";
+                DropDownListStd.DataBind();
+                
             }
         }
 
@@ -27,7 +33,8 @@ namespace SummerSchoolRegisterS
         {
             EntityRecourseForm entityRecourse = new EntityRecourseForm();
             entityRecourse.LessonId = int.Parse(DropDownList1.SelectedValue.ToString());
-            entityRecourse.StdId = int.Parse(TextBox1.Text);
+            //entityRecourse.StdId = int.Parse(TextBox1.Text);
+            entityRecourse.StdId= int.Parse(DropDownListStd.SelectedValue.ToString());
             BLLLesson.BllLessonRequest(entityRecourse); 
         }
     }

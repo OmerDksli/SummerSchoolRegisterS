@@ -9,7 +9,7 @@
         </div>
         <div>
             <asp:Label ID="Label2" runat="server" Text="Öğrenci Id'si giriniz"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListStd" runat="server" CssClass="form-control"></asp:DropDownList>
         </div>
         <div>
             <asp:Button ID="Button1" runat="server" Text="Ders Talebi Oluştur" CssClass="btn btn-warning" OnClick="Button1_Click" />

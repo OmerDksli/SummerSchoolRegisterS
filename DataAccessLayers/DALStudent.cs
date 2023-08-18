@@ -78,15 +78,36 @@ namespace DataAccessLayers
         }
         public static bool studentDelete(int delId)
         {
+            if (deneme(delId) == true)
+                return false;
+
             SqlCommand DeleteStudent = new SqlCommand("Delete From Student_Table Where STDID=@p1",Connection.con);
             if (DeleteStudent.Connection.State != ConnectionState.Open)
             {
                 DeleteStudent.Connection.Open();
             }
+            
 
-
-            DeleteStudent.Parameters.AddWithValue("p1", delId);
+            DeleteStudent.Parameters.AddWithValue("@p1", delId);
             return DeleteStudent.ExecuteNonQuery()>0 ;
+        }
+        static bool deneme(int a)
+        {
+            SqlCommand recourseFormRequest = new SqlCommand("select * From RECOURSEFORM_TABLE Where STDID=@p2", Connection.con);
+            if (recourseFormRequest.Connection.State != ConnectionState.Open)
+            {
+                recourseFormRequest.Connection.Open();
+            }
+
+            recourseFormRequest.Parameters.AddWithValue("@p2", a);
+            SqlDataReader sqlDataStudent = recourseFormRequest.ExecuteReader();
+            if (sqlDataStudent.HasRows)
+            {
+                sqlDataStudent.Close();
+                return true;
+            }
+            sqlDataStudent.Close();
+            return false;
         }
         public static bool studentUpdate(EntityStudent student)
         {
