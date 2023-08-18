@@ -34,7 +34,7 @@ namespace DataAccessLayers
         }
         public static int createLessonRequest(EntityRecourseForm recourseForm)
         {
-            SqlCommand commandCreateRequest = new SqlCommand("insert into (STDID,LESSONID) Values (@P1,@P2)", Connection.con);
+            SqlCommand commandCreateRequest = new SqlCommand("insert into RECOURSEFORM_TABLE (STDID,LESSONID) Values (@P1,@P2)", Connection.con);
             commandCreateRequest.Parameters.AddWithValue("@P1", recourseForm.StdId);
             commandCreateRequest.Parameters.AddWithValue("@P2", recourseForm.LessonId);
             if (commandCreateRequest.Connection.State != ConnectionState.Open)

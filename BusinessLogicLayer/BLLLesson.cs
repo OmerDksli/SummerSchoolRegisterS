@@ -13,5 +13,13 @@ namespace BusinessLogicLayer
         {
             return DALlLesson.LessonList();
         }
+        public static int BllLessonRequest(EntityRecourseForm recourseForm)
+        {
+            if (recourseForm.LessonId!=0&&recourseForm.StdId!=0)
+            {
+                return DALlLesson.createLessonRequest(recourseForm);
+            }
+            return -1;
+        }
     }
 }
